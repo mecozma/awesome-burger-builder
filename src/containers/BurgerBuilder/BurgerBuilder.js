@@ -88,6 +88,10 @@ export default class BurgerBuilder extends Component {
     })
   }
 
+  purchaseContinueHandler = () => {
+    alert('Your oder has been received');
+  }
+
   render() {
     const disabledInfo = {
       ...this.state.ingredients
@@ -98,7 +102,10 @@ export default class BurgerBuilder extends Component {
     return(
       <Aux>
       <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
-        <OrderSummary ingredients={this.state.ingredients} />
+        <OrderSummary 
+          ingredients={this.state.ingredients}
+          purchaseCancelled={this.purchaseCancelHandler}
+          purchaseContinued={this.purchaseContinueHandler} />
       </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls
