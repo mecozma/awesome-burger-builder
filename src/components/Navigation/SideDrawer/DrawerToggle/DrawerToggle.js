@@ -1,8 +1,14 @@
 import React from 'react';
-import Button from '../../../UI/Button/Button';
+import classes from './DrawerToggle.css';
 
 const drawerToggle = (props) => (
-  <Button clicked={props.clicked}>MENU</Button>
+  <div 
+    className={classes.DrawerToggle}
+    onClick={props.clicked}>
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
 );
 
 export default drawerToggle;
